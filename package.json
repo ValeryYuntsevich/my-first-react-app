@@ -1,0 +1,44 @@
+{
+  "name": "my-first-react-app",
+  "version": "1.0.0",
+  "description": "my first react app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeryYuntsevich/my-first-react-app.git"
+  },
+  "author": "YuntsevichValery <valery.yuntsevich@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeryYuntsevich/my-first-react-app/issues"
+  },
+  "homepage": "https://github.com/ValeryYuntsevich/my-first-react-app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "eslint": "^7.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "prettier": "2.0.5",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
