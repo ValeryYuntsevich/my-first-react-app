@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: "./src/index.tsx",
   resolve: {
-    extensions: [".ts", ".tsx",".js",".tsx",'.css']
+    extensions: [".ts", ".tsx",".js",".tsx",'.css','.module.css']
   },
 
   output: {
@@ -24,19 +24,20 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-              esModule: true,
-            },
-          },
-        ],
+              modules: true,
+            }
+          }
+        ]
       },
     ]
   },
+
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
