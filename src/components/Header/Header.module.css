@@ -1,0 +1,7 @@
+.header {
+  padding: 2em;
+  height: auto;
+  min-height: 40vh;
+  background-image: url('https://picsum.photos/id/451/200');
+  background-size: cover;
+}

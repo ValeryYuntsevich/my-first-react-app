@@ -1,0 +1,36 @@
+.info {
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-gap: 2em;
+}
+
+.mainInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.mainInfo > div {
+  display: flex;
+}
+
+.vote {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  font-size: 2rem;
+  color:white;
+  height: 50px;
+  width: 50px;
+}
+
+h1 {
+  margin-right: 5em;
+}
