@@ -1,7 +1,7 @@
 import * as React from "react";
-import * as styles from "./Movie.module.css";
+import * as styles from "./MovieListItem.module.css";
 
-const Movie = ({ movie, onChangeValue }: { movie: any, onChangeValue: any}) => {
+const MovieListItem = ({ movie, onChangeMovieID = () => {} } : { movie: any, onChangeMovieID?: any}) => {
 
   return (
     <div className={ styles.movie }>
@@ -11,8 +11,8 @@ const Movie = ({ movie, onChangeValue }: { movie: any, onChangeValue: any}) => {
           height="330"
           alt={ movie.title }
           src={ movie.poster_path }
-          onClick={() => {
-            onChangeValue(movie.id);
+          onClick={ () => {
+            onChangeMovieID(movie.id);
           }}
         />
       </div>
@@ -30,5 +30,4 @@ const Movie = ({ movie, onChangeValue }: { movie: any, onChangeValue: any}) => {
   );
 };
 
-
-export default Movie;
+export default MovieListItem;

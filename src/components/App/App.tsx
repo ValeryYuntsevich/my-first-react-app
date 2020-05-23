@@ -1,43 +1,30 @@
 import * as React from "react";
 import * as styles from "./App.module.css";
-import Header from "../Header/Header";
-import Movie from "../Movie/Movie";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
+import MoviePage from "../MoviePage/MoviePage";
+import MoviesPage from "../MoviesPage/MoviesPage";
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
   const [movieInfo, setMovieInfo] = useState();
 
-  const onChangeValueHandler = (id: any )=> {
-    fetch(`https://reactjs-cdp.herokuapp.com/movies/${id}`)
-    .then(response => response.json())
-    .then(jsonResponse => {
-      setMovieInfo(jsonResponse);
-    });
+  const onChangeMovieID = (id: any )=> {
+    console.log(id)
+    setMovieInfo(id);
   };
 
-  useEffect(() => {
-    fetch(`https://reactjs-cdp.herokuapp.com/movies`)
-      .then(response => response.json())
-      .then(jsonResponse => {
-        setMovies(jsonResponse.data);
-      });
-  },[])
-
-    return (
-      <div>
-        <Header movieInfo={ movieInfo }/>
-        {name}
-        <div className={ styles.items }>
-          {
-            movies.map((movie) => (
-              <Movie key={ movie.id } movie={ movie } onChangeValue={onChangeValueHandler} />
-            ))
-          }
-        </div>
-      </div>
-    );
+  return (
+    <div>
+      { movieInfo ? 
+        <MoviePage 
+          movieInfo = { movieInfo } 
+        /> : 
+        <MoviesPage
+          movieInfo = { movieInfo }
+          onChangeMovieID={ onChangeMovieID }
+        /> }
+    </div>
+  );
 };
 
 export default App;
