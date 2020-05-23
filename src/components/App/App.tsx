@@ -9,7 +9,6 @@ const App = () => {
   const [movieInfo, setMovieInfo] = useState();
 
   const onChangeMovieID = (id: any )=> {
-    console.log(id)
     setMovieInfo(id);
   };
 

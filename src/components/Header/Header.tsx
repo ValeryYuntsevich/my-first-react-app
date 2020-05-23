@@ -5,13 +5,14 @@ import Search from "../Search/Search";
 import MovieInfoListItem from "../MovieInfoListItem/MovieInfoListItem";
 
 
-const Header = ({ movieInfo, movie, onChangeMovieID = () => {} }: { movieInfo: any, movie: any, onChangeMovieID?: any }) => {
+const Header = ({ movieInfo, movie, onChangeMovieID = () => {}, movies }: { movieInfo: any, movie: any, movies?: any, onChangeMovieID?: any }) => {
   return <div className={ styles.header }> 
     { movieInfo ? 
       <MovieInfoListItem movie={ movie } 
       /> : 
       <Search 
         onChangeMovieID={ onChangeMovieID }
+        movie={ movie }
       /> 
     }
   </div>;
