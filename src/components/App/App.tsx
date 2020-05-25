@@ -1,10 +1,29 @@
 import * as React from "react";
 import * as styles from "./App.module.css";
+import { useState } from "react";
 
-export class App extends React.Component {
-    render() {
-      return <div className={styles.test}><h1>My first React app</h1></div>;
-    }
-}
+import MoviePage from "../MoviePage/MoviePage";
+import MoviesPage from "../MoviesPage/MoviesPage";
+
+const App = () => {
+  const [movieInfo, setMovieInfo] = useState();
+
+  const onChangeMovieID = (id: any )=> {
+    setMovieInfo(id);
+  };
+
+  return (
+    <div>
+      { movieInfo ? 
+        <MoviePage 
+          movieInfo = { movieInfo } 
+        /> : 
+        <MoviesPage
+          movieInfo = { movieInfo }
+          onChangeMovieID={ onChangeMovieID }
+        /> }
+    </div>
+  );
+};
 
 export default App;

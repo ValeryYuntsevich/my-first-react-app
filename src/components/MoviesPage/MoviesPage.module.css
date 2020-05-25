@@ -5,3 +5,9 @@
   grid-gap: 2em;
   justify-content: center;
 }
+
+.errorMessage {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
